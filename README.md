@@ -9,3 +9,14 @@ This is a simple contact form that uses Google Sheets as a backend. It is a stat
 3. Copy the URL of the published Google Sheet
 4. Fork this repository
 5. For detailed explanation on how to use this repository, check out [this blog post](https://github.com/jamiewilson/form-to-google-sheets#readme)
+
+## Technologies
+
+- HTML
+- CSS
+- JavaScript
+- Google Sheets
+- GitHub Pages
+
+## License
+
