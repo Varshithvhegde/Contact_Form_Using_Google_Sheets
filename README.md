@@ -4,7 +4,7 @@ This is a simple contact form that uses Google Sheets as a backend. It is a stat
 
 ## How to use
 
-1. Create a Google Sheet with the following columns: `Name`, `Email`, `Message`, `Timestamp`
+1. Create a Google Sheet with the following columns: `timestamp`, `email`, `name`, `message`
 2. Publish the Google Sheet to the web
 3. Copy the URL of the published Google Sheet
 4. Fork this repository
