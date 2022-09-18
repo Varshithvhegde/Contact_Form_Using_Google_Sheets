@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Contact Form</title>
+</head>
+<body>
+
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container {
+            background-color: #fff;
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-box form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container h1 {
+            text-align: center;
+            text-transform: uppercase;
+            color: #333;
+        }
+        .container form {
+            margin-top: 20px;
+        }
+        .container form .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container form .form-control:focus {
+            outline: none;
+            border-color: #333;
+        }
+        .container form .form-control.error {
+            border-color: #f00;
+        }
+        .container form .error-text {
+            color: #f00;
+            font-size: 12px;
+        }
+        .container form .btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .container form .btn:hover {
+            background-color: #555;
+        }
+        .container form .success-text {
+            color: #0f0;
+            font-size: 12px;
+        }
+        
+        form input[type="text"],textarea,
+        #sub{
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            width: 50%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+        #sub:hover{
+            background-color: #555;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                width: 100%;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="contact-box">
+            
+                <center><h2>Contact Us</h2></center>
+                <form name="submit-to-google-sheet">
+                    <input type="text" class="field" placeholder="Name" name="name" required>
+                    <input type="text" class="field" placeholder="Email" name="email" required>
+                    <input type="text" class="field" placeholder="Subject" id="sub" name ="subject" required>
+                    <textarea placeholder="Message" class="field" name="message" required></textarea>
+                    <input type="submit" class="btn" value="Send">
+
+                </form>
+        </div>
+        <div id="successmsg" hidden><div class="alert alert-success">
+            <strong>Success!</strong> Your message has been sent.
+                          </div></div>
+    
+    
+                    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyJekf24Ul5OLqzN5p5GuopqYf2eUp6o9h6i4SEISCxOrTU1CEVNbu9Fg66JhN4PiIK/exec'
+        const form = document.forms['submit-to-google-sheet'];
+        const successmsg=document.getElementById('successmsg');
+        const errormsg=document.getElementById('errormsg');
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response),
+            //show success message
+            successmsg.hidden=false
+            )
+            .catch(error => console.error('Error!', error.message),
+            //show error message
+            errormsg.hidden=false
+            )
+            form.reset();
+        })
+        
+      </script>
+</body>
+
+</html>
