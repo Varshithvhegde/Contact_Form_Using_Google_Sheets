@@ -113,9 +113,14 @@
 
                 </form>
         </div>
+
+
+        
         <div id="successmsg" hidden><div class="alert alert-success">
             <strong>Success!</strong> Your message has been sent.
                           </div></div>
+
+
     <div id="errormsg" hidden><div class="alert alert-danger">
                             <strong>Error!</strong> There was an error sending your message.
                                           </div></div>
@@ -133,10 +138,10 @@
             //show success message
             successmsg.hidden=false
             )
-            .catch(error => console.error('Error!', error.message),
+            .catch(error => errormsg.hidden=false)
             //show error message
-            errormsg.hidden=false
-            )
+            
+            
             form.reset();
         })
         
