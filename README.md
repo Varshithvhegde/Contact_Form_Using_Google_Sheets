@@ -25,13 +25,13 @@ This is a simple contact form that uses Google Sheets as a backend. It is a stat
 
 ## Screenshot
 
+![frame_generic_dark (11)](https://user-images.githubusercontent.com/80502833/190889408-4a2a52a1-a0d3-4b3f-967a-903883cbefad.png)
 
 
 ## License
 
 [MIT](LICENSE)
 
-![frame_generic_dark (11)](https://user-images.githubusercontent.com/80502833/190889408-4a2a52a1-a0d3-4b3f-967a-903883cbefad.png)
 
 
 
